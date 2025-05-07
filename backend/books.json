@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Solaris123",
       "author": "Stanisław Lem",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu enim augue. Vestibulum sed hendrerit nisl. Sed ullamcorper tempor neque. ",
-      "year": 1961
+      "year": 1961,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu enim augue. Vestibulum sed hendrerit nisl. Sed ullamcorper tempor neque. "
     },
     {
       "id": 2,
