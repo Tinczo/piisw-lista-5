@@ -23,4 +23,8 @@ export class BooksService {
   saveBook(book: Book): Observable<Book> {
     return this.http.put<Book>(`${booksApiPrefix}/${book.id}`, book);
   }
+
+  searchBooks(query: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${booksApiPrefix}?q=${query}`);
+  }
 }

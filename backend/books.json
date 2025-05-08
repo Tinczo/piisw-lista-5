@@ -16,10 +16,10 @@
     },
     {
       "id": 3,
-      "title": "Ubik",
+      "title": "Solaris 2",
       "author": "Phillip K Dick",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu enim augue. Vestibulum sed hendrerit nisl. Sed ullamcorper tempor neque. ",
-      "year": 1965
+      "year": 1965,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu enim augue. Vestibulum sed hendrerit nisl. Sed ullamcorper tempor neque. "
     },
     {
       "id": 4,

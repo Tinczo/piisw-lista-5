@@ -1,5 +1,32 @@
 <article class="m-3">
-  <h2>List of all books</h2>
+  <h2 class="mb-3">List of all books</h2>
+  
+  <div class="mb-4">
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="bi bi-search"></i>
+      </span>
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Search books by title, author or description (min. 2 characters)" 
+        [formControl]="searchControl"
+      >
+      <button 
+        *ngIf="searchControl.value" 
+        class="btn btn-outline-secondary" 
+        type="button"
+        (click)="searchControl.setValue('')"
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="books.length === 0" class="alert alert-info">
+    No books found matching your search.
+  </div>
+  
   <section class="d-flex flex-column gap-2">
     @for (book of books; track book.id) {
       <div class="card">
@@ -14,6 +41,5 @@
         </div>
       </div>
     }
-
   </section>
 </article>
