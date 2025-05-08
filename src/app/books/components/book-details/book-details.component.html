@@ -1,4 +1,3 @@
-
 <article class="m-3">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Book Details</h2>
@@ -17,6 +16,8 @@
       </div>
     </div>
   </div>
+  
+  <bs-review-form [bookId]="book.id" (reviewAdded)="onReviewAdded($event)"></bs-review-form>
   
   <div class="mt-4">
     <h3>Reviews</h3>

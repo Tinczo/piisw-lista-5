@@ -17,4 +17,8 @@ export class ReviewsService {
   getReviewsForBook(bookId: number): Observable<Review[]> {
     return this.http.get<Review[]>(`${reviewsApiPrefix}?forBook=${bookId}`);
   }
-}
+
+  saveReview(review: Omit<Review, 'id'>): Observable<Review> {
+    return this.http.post<Review>(reviewsApiPrefix, review);
+  }
+} 

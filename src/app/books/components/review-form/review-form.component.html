@@ -1,0 +1,63 @@
+<div class="card mb-4">
+    <div class="card-header">
+      <h4>Add Your Review</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="title" 
+            formControlName="title"
+            [ngClass]="{'is-invalid': reviewForm.get('title')?.invalid && (reviewForm.get('title')?.dirty || reviewForm.get('title')?.touched)}"
+          >
+          <div *ngIf="reviewForm.get('title')?.errors?.['required'] && (reviewForm.get('title')?.dirty || reviewForm.get('title')?.touched)" class="invalid-feedback">
+            Title is required.
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="rate" class="form-label">Rating (1-5)</label>
+          <select 
+            class="form-select" 
+            id="rate" 
+            formControlName="rate"
+            [ngClass]="{'is-invalid': reviewForm.get('rate')?.invalid && (reviewForm.get('rate')?.dirty || reviewForm.get('rate')?.touched)}"
+          >
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+          <div *ngIf="reviewForm.get('rate')?.invalid && (reviewForm.get('rate')?.dirty || reviewForm.get('rate')?.touched)" class="invalid-feedback">
+            Please select a valid rating.
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="description" class="form-label">Review</label>
+          <textarea 
+            class="form-control" 
+            id="description" 
+            rows="4" 
+            formControlName="description"
+            [ngClass]="{'is-invalid': reviewForm.get('description')?.invalid && (reviewForm.get('description')?.dirty || reviewForm.get('description')?.touched)}"
+          ></textarea>
+          <div *ngIf="reviewForm.get('description')?.errors?.['required'] && (reviewForm.get('description')?.dirty || reviewForm.get('description')?.touched)" class="invalid-feedback">
+            Review text is required.
+          </div>
+        </div>
+        
+        <button 
+          type="submit" 
+          class="btn btn-primary" 
+          [disabled]="reviewForm.invalid || submitting"
+        >
+          {{ submitting ? 'Submitting...' : 'Submit Review' }}
+        </button>
+      </form>
+    </div>
+  </div>
